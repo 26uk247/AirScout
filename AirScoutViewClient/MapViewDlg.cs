@@ -425,43 +425,33 @@ namespace AirScoutViewClient
 
 
       
-      private void InitializeClouds()
+private void InitializeClouds()
 {
-    Log.WriteMessage("Initializing clouds.");
+    il_Clouds_R.Images.Clear();
 
-    try
+    for (int i = 0; i <= 100; i++)
     {
-        il_Clouds.Images.Clear();
-
-        for (int i = 0; i <= 100; i++)
-        {
-            Color color = GetColor(1.0f - (float)i / 100.0f);
-            il_Clouds.Images.Add(CreateCloudIcon(color));
-        }
-
-        il_Clouds.Images.Add(CreateCloudIcon(Color.Gray));
-        bmindex_gray = il_Clouds.Images.Count - 1;
-
-        il_Clouds.Images.Add(CreateCloudIcon(Color.LightGreen));
-        bmindex_lightgreen = il_Clouds.Images.Count - 1;
-
-        il_Clouds.Images.Add(CreateCloudIcon(Color.DarkOrange));
-        bmindex_darkorange = il_Clouds.Images.Count - 1;
-
-        il_Clouds.Images.Add(CreateCloudIcon(Color.Red));
-        bmindex_red = il_Clouds.Images.Count - 1;
-
-        il_Clouds.Images.Add(CreateCloudIcon(Color.Magenta));
-        bmindex_magenta = il_Clouds.Images.Count - 1;
-
-        Log.WriteMessage("Cloud icons initialized.");
+        il_Clouds_R.Images.Add(
+            CreateCloudIcon(GetColor(1.0f - (float)i / 100.0f)));
     }
-    catch (Exception ex)
-    {
-        Log.WriteMessage(ex.ToString(), LogLevel.Error);
-    }
+
+    il_Clouds_R.Images.Add(CreateCloudIcon(Color.Gray));
+    bmindex_gray = il_Clouds_R.Images.Count - 1;
+
+    il_Clouds_R.Images.Add(CreateCloudIcon(Color.LightGreen));
+    bmindex_lightgreen = il_Clouds_R.Images.Count - 1;
+
+    il_Clouds_R.Images.Add(CreateCloudIcon(Color.DarkOrange));
+    bmindex_darkorange = il_Clouds_R.Images.Count - 1;
+
+    il_Clouds_R.Images.Add(CreateCloudIcon(Color.Red));
+    bmindex_red = il_Clouds_R.Images.Count - 1;
+
+    il_Clouds_R.Images.Add(CreateCloudIcon(Color.Magenta));
+    bmindex_magenta = il_Clouds_R.Images.Count - 1;
 }
 
+  
 
         private void InitializeCharts()
         {
@@ -1502,16 +1492,15 @@ namespace AirScoutViewClient
 
     VieClientStatus = VIEWCLIENTSTATUS.INIT;
 
-    il_Planes_L.Images.Clear();
-    il_Planes_M.Images.Clear();
-    il_Planes_H.Images.Clear();
-    il_Planes_S.Images.Clear();
-    il_Planes_R.Images.Clear();
-    il_Clouds.Images.Clear();
+il_Planes_L.Images.Clear();
+il_Planes_M.Images.Clear();
+il_Planes_H.Images.Clear();
+il_Planes_S.Images.Clear();
+il_Clouds_R.Images.Clear();
 
-    InitializeIcons();
-    InitializeClouds();
-    InitializeCharts();
+InitializeIcons();
+InitializeClouds();
+InitializeCharts();
 
     ti_Progress.Start();
     VieClientStatus = VIEWCLIENTSTATUS.CONNECTING;
