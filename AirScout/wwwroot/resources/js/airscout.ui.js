@@ -400,12 +400,14 @@ class MapArea {
                     (val.category == AircraftCategory.SUPERHEAVY) ? [48, 48] :
                         (val.category == AircraftCategory.HEAVY) ? [32, 32] :
                             (val.category == AircraftCategory.MEDIUM) ? [24, 24] :
-                                (val.category == AircraftCategory.LIGHT) ? [16, 16] : [24, 24];
+                                 (val.category == AircraftCategory.RAINCLOUD) ? [24, 24] :
+                                        (val.category == AircraftCategory.LIGHT) ? [16, 16] : [24, 24];
                 var cat =
                     (val.category == AircraftCategory.SUPERHEAVY) ? "S" :
                         (val.category == AircraftCategory.HEAVY) ? "H" :
                             (val.category == AircraftCategory.MEDIUM) ? "M" :
-                                (val.category == AircraftCategory.LIGHT) ? "L" : "N";
+                                 (val.category == AircraftCategory.RAINCLOUD) ? "R" :
+                                        (val.category == AircraftCategory.LIGHT) ? "L" : "N";
 
                 // create show tooltip, if hovered or selected
                 if (val.mouseOver || val.selected) {
