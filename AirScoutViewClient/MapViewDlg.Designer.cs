@@ -571,11 +571,11 @@
             this.il_Planes_S.ImageSize = new System.Drawing.Size(48, 48);
             this.il_Planes_S.TransparentColor = System.Drawing.Color.Transparent;
             // 
-            // il_Planes_R
+            // il_Clouds_R
             // 
-            this.il_Planes_R.ColorDepth = System.Windows.Forms.ColorDepth.Depth24Bit;
-            this.il_Planes_R.ImageSize = new System.Drawing.Size(24, 24);
-            this.il_Planes_R.TransparentColor = System.Drawing.Color.Transparent;
+            this.il_Clouds_R.ColorDepth = System.Windows.Forms.ColorDepth.Depth24Bit;
+            this.il_Clouds_R.ImageSize = new System.Drawing.Size(24, 24);
+            this.il_Clouds_R.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // il_Airports
             // 
@@ -662,7 +662,7 @@
         public System.Windows.Forms.ImageList il_Planes_H;
         public System.Windows.Forms.ImageList il_Planes_L;
         public System.Windows.Forms.ImageList il_Planes_S;
-        public System.Windows.Forms.ImageList il_Planes_R;
+        public System.Windows.Forms.ImageList il_Clouds_R;
         public System.Windows.Forms.ImageList il_Airports;
         public System.Windows.Forms.ImageList il_Planes_M;
         private System.Windows.Forms.GroupBox gb_Path;
