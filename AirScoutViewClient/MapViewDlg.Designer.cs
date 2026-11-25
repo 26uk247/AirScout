@@ -571,6 +571,12 @@
             this.il_Planes_S.ImageSize = new System.Drawing.Size(48, 48);
             this.il_Planes_S.TransparentColor = System.Drawing.Color.Transparent;
             // 
+            // il_Planes_R
+            // 
+            this.il_Planes_R.ColorDepth = System.Windows.Forms.ColorDepth.Depth24Bit;
+            this.il_Planes_R.ImageSize = new System.Drawing.Size(24, 24);
+            this.il_Planes_R.TransparentColor = System.Drawing.Color.Transparent;
+            // 
             // il_Airports
             // 
             this.il_Airports.ColorDepth = System.Windows.Forms.ColorDepth.Depth24Bit;
