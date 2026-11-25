@@ -562,12 +562,24 @@ class MapArea {
              
 
                 // create new icon according to category
+                //var spricon = new L.Icon({
+                //    iconUrl: "/resources/icons/aircrafts/" + color + ".png",
+                //    iconSize: size,
+                //    iconAnchor: [size[0] / 2, size[1] / 2],
+                //});
+                // category aware image choice
+                var iconUrl = (val.category == AircraftCategory.RAINCLOUD)
+                    ? "/resources/icons/aircrafts/cloud.png"
+                    : "/resources/icons/aircrafts/" + color + ".png";
+
                 var spricon = new L.Icon({
-                    iconUrl: "/resources/icons/aircrafts/" + color + ".png",
+                    iconUrl: iconUrl,
                     iconSize: size,
                     iconAnchor: [size[0] / 2, size[1] / 2],
                 });
 
+
+                
                 // create new marker, if necessarey
                 if (val.sprite == null) {
 
