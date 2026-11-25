@@ -433,19 +433,18 @@ namespace AirScoutViewClient
                 for (int i = 0; i <= 100; i++)
                 {
                     Bitmap bm = CreateCloudIcon(GetColor(1.0f - (float)i / 100.0f));
-                    il_Planes_R.Images.Add(bm);
+                    il_Clouds_R.Images.Add(bm);
                 }
-                il_Planes_R.Images.Add(CreateCloudIcon(Color.Gray));
-                bmindex_gray = il_Planes_R.Images.Count - 1;
-                il_Planes_R.Images.Add(CreateCloudIcon(Color.LightGreen));
-                bmindex_lightgreen = il_Planes_R.Images.Count - 1;
-                il_Planes_R.Images.Add(CreateCloudIcon(Color.DarkOrange));
-                bmindex_darkorange = il_Planes_R.Images.Count - 1;
-                il_Planes_R.Images.Add(CreateCloudIcon(Color.Red));
-                bmindex_red = il_Planes_R.Images.Count - 1;
-                il_Planes_R.Images.Add(CreateCloudIcon(Color.Magenta));
-                bmindex_magenta = il_Planes_R.Images.Count - 1;
-            }
+                il_Clouds_R.Images.Add(CreateCloudIcon(Color.Gray));
+                bmindex_gray = il_Clouds_R.Images.Count - 1;
+                il_Clouds_R.Images.Add(CreateCloudIcon(Color.LightGreen));
+                bmindex_lightgreen = il_Clouds_R.Images.Count - 1;
+                il_Clouds_R.Images.Add(CreateCloudIcon(Color.DarkOrange));
+                bmindex_darkorange = il_Clouds_R.Images.Count - 1;
+                il_Clouds_R.Images.Add(CreateCloudIcon(Color.Red));
+                bmindex_red = il_Clouds_R.Images.Count - 1;
+                il_Clouds_R.Images.Add(CreateCloudIcon(Color.Magenta));
+                bmindex_magenta = il_Clouds_R.Images.Count - 1;
             }
             catch (Exception ex)
             {
