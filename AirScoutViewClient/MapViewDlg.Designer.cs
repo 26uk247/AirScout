@@ -662,6 +662,7 @@
         public System.Windows.Forms.ImageList il_Planes_H;
         public System.Windows.Forms.ImageList il_Planes_L;
         public System.Windows.Forms.ImageList il_Planes_S;
+        public System.Windows.Forms.ImageList il_Planes_R;
         public System.Windows.Forms.ImageList il_Airports;
         public System.Windows.Forms.ImageList il_Planes_M;
         private System.Windows.Forms.GroupBox gb_Path;
