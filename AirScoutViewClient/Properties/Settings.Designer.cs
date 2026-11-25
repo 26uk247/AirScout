@@ -298,6 +298,18 @@ namespace AirScoutViewClient.Properties {
                 this["Planes_IconFileName"] = value;
             }
         }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("cloud.png")]
+        public string Clouds_IconFileName {
+        get {
+                return ((string)(this["Clouds_IconFileName"]));
+            }
+        set {
+            this["Clouds_IconFileName"] = value;
+            }
+        }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
