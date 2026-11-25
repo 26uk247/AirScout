@@ -19,6 +19,8 @@ namespace AirScout.Core
         HEAVY = 3,
         [StringCustomAttribute("Superheavy")]
         SUPERHEAVY = 4,
+        [StringCustomAttribute("Raincloud")]
+        RAINCLOUD = 5,
     }
 
     public class PlaneCategory
