@@ -74,7 +74,7 @@
             this.il_Planes_H = new System.Windows.Forms.ImageList(this.components);
             this.il_Planes_L = new System.Windows.Forms.ImageList(this.components);
             this.il_Planes_S = new System.Windows.Forms.ImageList(this.components);
-            this.il_Planes_R = new System.Windows.Forms.ImageList(this.components);
+            this.il_Clouds_R = new System.Windows.Forms.ImageList(this.components);
             this.il_Airports = new System.Windows.Forms.ImageList(this.components);
             this.il_Planes_M = new System.Windows.Forms.ImageList(this.components);
             this.ti_ShowLegends = new System.Windows.Forms.Timer(this.components);
