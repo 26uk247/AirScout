@@ -71,6 +71,9 @@
     <Setting Name="Planes_IconFileName" Type="System.String" Scope="User">
       <Value Profile="(Default)">plane.png</Value>
     </Setting>
+    <Setting Name="Clouds_IconFileName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">cloud.png</Value>
+    </Setting>
     <Setting Name="Airports_IconFileName" Type="System.String" Scope="User">
       <Value Profile="(Default)">airport.png</Value>
     </Setting>
