@@ -427,28 +427,39 @@ namespace AirScoutViewClient
       
 private void InitializeClouds()
 {
-    il_Clouds_R.Images.Clear();
+    Log.WriteMessage("Initializing cloud icons.");
 
-    for (int i = 0; i <= 100; i++)
+    try
     {
-        il_Clouds_R.Images.Add(
-            CreateCloudIcon(GetColor(1.0f - (float)i / 100.0f)));
+        il_Clouds_R.Images.Clear();
+
+        for (int i = 0; i <= 100; i++)
+        {
+            il_Clouds_R.Images.Add(
+                CreateCloudIcon(GetColor(1.0f - (float)i / 100.0f)));
+        }
+
+        il_Clouds_R.Images.Add(CreateCloudIcon(Color.Gray));
+        bmindex_gray = il_Clouds_R.Images.Count - 1;
+
+        il_Clouds_R.Images.Add(CreateCloudIcon(Color.LightGreen));
+        bmindex_lightgreen = il_Clouds_R.Images.Count - 1;
+
+        il_Clouds_R.Images.Add(CreateCloudIcon(Color.DarkOrange));
+        bmindex_darkorange = il_Clouds_R.Images.Count - 1;
+
+        il_Clouds_R.Images.Add(CreateCloudIcon(Color.Red));
+        bmindex_red = il_Clouds_R.Images.Count - 1;
+
+        il_Clouds_R.Images.Add(CreateCloudIcon(Color.Magenta));
+        bmindex_magenta = il_Clouds_R.Images.Count - 1;
+
+        Log.WriteMessage("Cloud icons initialized.");
     }
-
-    il_Clouds_R.Images.Add(CreateCloudIcon(Color.Gray));
-    bmindex_gray = il_Clouds_R.Images.Count - 1;
-
-    il_Clouds_R.Images.Add(CreateCloudIcon(Color.LightGreen));
-    bmindex_lightgreen = il_Clouds_R.Images.Count - 1;
-
-    il_Clouds_R.Images.Add(CreateCloudIcon(Color.DarkOrange));
-    bmindex_darkorange = il_Clouds_R.Images.Count - 1;
-
-    il_Clouds_R.Images.Add(CreateCloudIcon(Color.Red));
-    bmindex_red = il_Clouds_R.Images.Count - 1;
-
-    il_Clouds_R.Images.Add(CreateCloudIcon(Color.Magenta));
-    bmindex_magenta = il_Clouds_R.Images.Count - 1;
+    catch (Exception ex)
+    {
+        Log.WriteMessage(ex.ToString(), LogLevel.Error);
+    }
 }
 
   
