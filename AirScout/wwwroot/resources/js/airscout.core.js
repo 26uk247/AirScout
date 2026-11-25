@@ -66,9 +66,11 @@ const AircraftCategory = {
     MEDIUM: 2,
     HEAVY: 3,
     SUPERHEAVY: 4,
+    RAINCLOUD: 5,
 
     getStringValue : function(value) {
 
+        if (value == 5) return "Raincloud";
         if (value == 4) return "Superheavy";
         if (value == 3) return "Heavy";
         if (value == 2) return "Medium";
