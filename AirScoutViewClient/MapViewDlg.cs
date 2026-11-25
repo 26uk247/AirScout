@@ -295,6 +295,28 @@ namespace AirScoutViewClient
             return bm;
         }
 
+        private Bitmap CreateCloudIcon(Color color)
+        {
+            // get the basic icon
+            Bitmap bm = new Bitmap(AppDirectory + Path.DirectorySeparatorChar + Properties.Settings.Default.Clouds_IconFileName);
+            // read the content and change color of each pixel
+            for (int j = 0; j < bm.Width; j++)
+            {
+                for (int k = 0; k < bm.Height; k++)
+                {
+                    // get the color of each pixel
+                    Color c = bm.GetPixel(j, k);
+                    // check if not transparent
+                    if (c.A > 0)
+                    {
+                        // change color
+                        bm.SetPixel(j, k, Color.FromArgb(c.A, color.R, color.G, color.B));
+                    }
+                }
+            }
+            return bm;
+        }
+
         public static Color ColorFromHSV(double hue, double saturation, double value)
         {
             int hi = Convert.ToInt32(Math.Floor(hue / 60)) % 6;
