@@ -388,37 +388,31 @@ namespace AirScoutViewClient
                     il_Planes_M.Images.Add(bm);
                     il_Planes_H.Images.Add(bm);
                     il_Planes_S.Images.Add(bm);
-                    il_Planes_R.Images.Add(bm);
                 }
                 il_Planes_L.Images.Add(CreatePlaneIcon(Color.Gray));
                 il_Planes_M.Images.Add(CreatePlaneIcon(Color.Gray));
                 il_Planes_H.Images.Add(CreatePlaneIcon(Color.Gray));
                 il_Planes_S.Images.Add(CreatePlaneIcon(Color.Gray));
-                il_Planes_R.Images.Add(CreatePlaneIcon(Color.Gray));
                 bmindex_gray = il_Planes_M.Images.Count - 1;
                 il_Planes_L.Images.Add(CreatePlaneIcon(Color.LightGreen));
                 il_Planes_M.Images.Add(CreatePlaneIcon(Color.LightGreen));
                 il_Planes_H.Images.Add(CreatePlaneIcon(Color.LightGreen));
                 il_Planes_S.Images.Add(CreatePlaneIcon(Color.LightGreen));
-                il_Planes_R.Images.Add(CreatePlaneIcon(Color.LightGreen));
                 bmindex_lightgreen = il_Planes_M.Images.Count - 1;
                 il_Planes_L.Images.Add(CreatePlaneIcon(Color.DarkOrange));
                 il_Planes_M.Images.Add(CreatePlaneIcon(Color.DarkOrange));
                 il_Planes_H.Images.Add(CreatePlaneIcon(Color.DarkOrange));
                 il_Planes_S.Images.Add(CreatePlaneIcon(Color.DarkOrange));
-                il_Planes_R.Images.Add(CreatePlaneIcon(Color.DarkOrange));
                 bmindex_darkorange = il_Planes_M.Images.Count - 1;
                 il_Planes_L.Images.Add(CreatePlaneIcon(Color.Red));
                 il_Planes_M.Images.Add(CreatePlaneIcon(Color.Red));
                 il_Planes_H.Images.Add(CreatePlaneIcon(Color.Red));
                 il_Planes_S.Images.Add(CreatePlaneIcon(Color.Red));
-                il_Planes_R.Images.Add(CreatePlaneIcon(Color.Red));
                 bmindex_red = il_Planes_M.Images.Count - 1;
                 il_Planes_L.Images.Add(CreatePlaneIcon(Color.Magenta));
                 il_Planes_M.Images.Add(CreatePlaneIcon(Color.Magenta));
                 il_Planes_H.Images.Add(CreatePlaneIcon(Color.Magenta));
                 il_Planes_S.Images.Add(CreatePlaneIcon(Color.Magenta));
-                il_Planes_R.Images.Add(CreatePlaneIcon(Color.Magenta));
                 bmindex_magenta = il_Planes_M.Images.Count - 1;
                 il_Airports.Images.Add(CreateAirportIcon(255));
             }
@@ -428,6 +422,39 @@ namespace AirScoutViewClient
             }
             Log.WriteMessage("Finished.");
         }
+      
+      private void InitializeClouds()
+        {
+            // create extra icons regular size
+            Log.WriteMessage("Started.");
+            try
+         {
+                // now generate 0% - 100% colored clouds
+                for (int i = 0; i <= 100; i++)
+                {
+                    Bitmap bm = CreateCloudIcon(GetColor(1.0f - (float)i / 100.0f));
+                    il_Planes_R.Images.Add(bm);
+                }
+                il_Planes_R.Images.Add(CreateCloudIcon(Color.Gray));
+                bmindex_gray = il_Planes_R.Images.Count - 1;
+                il_Planes_R.Images.Add(CreateCloudIcon(Color.LightGreen));
+                bmindex_lightgreen = il_Planes_R.Images.Count - 1;
+                il_Planes_R.Images.Add(CreateCloudIcon(Color.DarkOrange));
+                bmindex_darkorange = il_Planes_R.Images.Count - 1;
+                il_Planes_R.Images.Add(CreateCloudIcon(Color.Red));
+                bmindex_red = il_Planes_R.Images.Count - 1;
+                il_Planes_R.Images.Add(CreateCloudIcon(Color.Magenta));
+                bmindex_magenta = il_Planes_R.Images.Count - 1;
+            }
+            }
+            catch (Exception ex)
+            {
+                Log.WriteMessage(ex.ToString(), LogLevel.Error);
+            }
+            Log.WriteMessage("Finished.");
+        }
+
+
 
         private void InitializeCharts()
         {
