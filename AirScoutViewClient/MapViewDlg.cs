@@ -972,8 +972,6 @@ namespace AirScoutViewClient
                 bm = new Bitmap(il_Planes_M.Images[bmindex]);
             else if (info.Category == PLANECATEGORY.LIGHT)
                 bm = new Bitmap(il_Planes_L.Images[bmindex]);
-            else if (info.Category == PLANECATEGORY.RAINCLOUD)
-                bm = new Bitmap(il_Planes_R.Images[bmindex]);
             else
                 bm = new Bitmap(il_Planes_M.Images[bmindex]);
             GMarkerGoogle m = new GMarkerGoogle(new PointLatLng(info.Lat, info.Lon), ToolTipFont, RotateImageByAngle(bm, (float)info.Track));
@@ -1044,8 +1042,6 @@ namespace AirScoutViewClient
                 bm = new Bitmap(il_Planes_M.Images[bmindex]);
             else if (info.Category == PLANECATEGORY.LIGHT)
                 bm = new Bitmap(il_Planes_L.Images[bmindex]);
-            else if (info.Category == PLANECATEGORY.RAINCLOUD)
-                bm = new Bitmap(il_Planes_R.Images[bmindex]);
             else
                 bm = new Bitmap(il_Planes_M.Images[bmindex]);
             GMarkerGoogle m = new GMarkerGoogle(new PointLatLng(info.Lat, info.Lon), ToolTipFont, RotateImageByAngle(bm, (float)info.Track));
