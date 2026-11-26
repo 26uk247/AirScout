@@ -170,6 +170,7 @@
             this.il_Planes_H = new System.Windows.Forms.ImageList(this.components);
             this.il_Planes_L = new System.Windows.Forms.ImageList(this.components);
             this.il_Planes_S = new System.Windows.Forms.ImageList(this.components);
+            this.il_Clouds_R = new System.Windows.Forms.ImageList(this.components);
             this.bw_Webserver = new System.ComponentModel.BackgroundWorker();
             this.bw_JSONWriter = new System.ComponentModel.BackgroundWorker();
             this.bw_NewsFeed = new System.ComponentModel.BackgroundWorker();
@@ -1990,6 +1991,12 @@
             this.il_Planes_S.ColorDepth = System.Windows.Forms.ColorDepth.Depth24Bit;
             this.il_Planes_S.ImageSize = new System.Drawing.Size(48, 48);
             this.il_Planes_S.TransparentColor = System.Drawing.Color.Transparent;
+            //
+            // il_Clouds_R
+            // 
+            this.il_Clouds_R.ColorDepth = System.Windows.Forms.ColorDepth.Depth24Bit;
+            this.il_Clouds_R.ImageSize = new System.Drawing.Size(24, 24);
+            this.il_Clouds_R.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // bw_Webserver
             // 
