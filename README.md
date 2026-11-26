@@ -17,7 +17,7 @@ Is has the following functions:
 
 Forked by M8GTD (@26uk247) for personal use, to mess around with feeding in Rain Cell positions via FlexibleJSON feed, and displaying as cloud icons, to have Aircraft Scatter prediction and Rain Scatter potential on the same map. (Given that "RainScout" is incomplete). The addition of a new plane wake turbulence Category (5 = RAINCLOUD), is the mechanism for displaying a cloud icon instead of a plane icon. Tooltip shows the speed, direction, bright band height.
 
-A python script obtaining meteo data, and node-red flow converting that to a JSON feed, (neither in this project) provides live data when a FlexibleJSON feed is used in airscout.
+A python script obtaining meteo data, and node-red flow converting that to a JSON feed, both in the M8GTD folder) provides live data when a FlexibleJSON feed is used in airscout.
 The python script obtains rain cells of 30dbZ or above, centered around my location of IO70JG. It also obtains the latest bright band height, windspeed and direction aroud my location to fake the plane path of travel.
 
 Some manual entries in the database are required to convert the aircraft type ("RMxx", where xx = the dbZ reflectivity value of the rain cell) in order to show the dbz value in the tooltip.
