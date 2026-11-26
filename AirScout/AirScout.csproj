@@ -2118,6 +2118,12 @@
     <Content Include="Main.ico" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="cloud.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Main.ico" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="wwwroot\index.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
