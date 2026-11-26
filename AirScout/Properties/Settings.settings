@@ -125,6 +125,9 @@
     <Setting Name="Planes_IconFileName" Type="System.String" Scope="User">
       <Value Profile="(Default)">plane.png</Value>
     </Setting>
+    <Setting Name="Clouds_IconFileName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">cloud.png</Value>
+    </Setting>
     <Setting Name="Planes_PlaneFeed2" Type="System.String" Scope="User">
       <Value Profile="(Default)">[none]</Value>
     </Setting>
@@ -256,6 +259,9 @@
     </Setting>
     <Setting Name="Planes_IconSize_S" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">48</Value>
+    </Setting>
+    <Setting Name="Clouds_IconSize_R" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">24</Value>
     </Setting>
     <Setting Name="Webserver_Port" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">9880</Value>
