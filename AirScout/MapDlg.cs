@@ -1742,6 +1742,9 @@ namespace AirScout
                 // initialize icons
                 Splash("Creating icons...");
                 InitializeIcons();
+                // initialize clouds
+                Splash("Creating clouds...");
+                InitializeClouds();
                 ToolTipFont = CreateFontFromString(Properties.Settings.Default.Map_ToolTipFont);
                 Splash("Loading Map...");
 
