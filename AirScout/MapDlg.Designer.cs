@@ -2168,6 +2168,7 @@
         public System.Windows.Forms.ImageList il_Planes_H;
         public System.Windows.Forms.ImageList il_Planes_L;
         public System.Windows.Forms.ImageList il_Planes_S;
+        public System.Windows.Forms.ImageList il_Clouds_R;
         private System.ComponentModel.BackgroundWorker bw_Webserver;
         private System.ComponentModel.BackgroundWorker bw_JSONWriter;
         private System.ComponentModel.BackgroundWorker bw_NewsFeed;
