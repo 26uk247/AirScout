@@ -26,3 +26,12 @@ Some manual entries in the database are required to convert the aircraft type ("
 <img width="774" height="661" alt="image" src="https://github.com/user-attachments/assets/c2d67423-48dd-487d-98f6-9c094c41d3bf" />
 <img width="1013" height="826" alt="image" src="https://github.com/user-attachments/assets/54f0c0e0-6373-45e1-91de-3b3c1ebf2c87" />
 
+To build, i download and unpack the zip, then run these commands in a VS basic build tools command window, from the unzipped directory:
+
+nuget restore
+msbuild AirScout.sln /p:Configuration=Debug /p:Platform="Any CPU" /clp:ErrorsOnly
+corflags /32BITREQ+ E:\Airscout\AirScout-Rain-Clouds\AirScout\bin\Debug\AirScout.exe
+
+My environment is 64 bit windows 10
+
+Please note, this is a personal project only, and i'm really not a developer. Feel free to have a look yourself, but please don't expect great things or any support, sorry.
