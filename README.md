@@ -23,7 +23,7 @@ The python script obtains rain cells of 30dbZ or above, centered around my locat
 Some manual entries in the database aircrafts.db3 are required to convert the aircraft type ("RMxx", where xx = the dbZ reflectivity value of the rain cell) in order to show the dbz value in the tooltip.
 
 
-<img width="1004" height="741" alt="image" src="https://github.com/user-attachments/assets/91ce2863-ea74-41dc-8331-b14e7bd1e8ca" />
+<img width="1007" height="763" alt="image" src="https://github.com/user-attachments/assets/96b57cd1-e708-4d6d-8078-3f693f15fbc7" />
 <img width="344" height="265" alt="image" src="https://github.com/user-attachments/assets/51524f45-4393-448f-800f-c7c0d791c127" />
 <img width="348" height="293" alt="image" src="https://github.com/user-attachments/assets/2cf4797a-3c41-46dd-b718-cd6cc74f7719" />
 <img width="786" height="593" alt="image" src="https://github.com/user-attachments/assets/17e78910-f633-4791-a567-4717d7681ea3" />
