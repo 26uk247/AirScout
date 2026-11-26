@@ -2581,6 +2581,30 @@ namespace AirScout
             return bm;
         }
 
+
+        private Bitmap CreateCloudIcon(Color color)
+        {
+            // get the basic icon
+            Bitmap bm = new Bitmap(AppDirectory + Path.DirectorySeparatorChar + Properties.Settings.Default.Clouds_IconFileName);
+            // read the content and change color of each pixel
+            for (int j = 0; j < bm.Width; j++)
+            {
+                for (int k = 0; k < bm.Height; k++)
+                {
+                    // get the color of each pixel
+                    Color c = bm.GetPixel(j, k);
+                    // check if not transparent
+                    if (c.A > 0)
+                    {
+                        // change color
+                        bm.SetPixel(j, k, Color.FromArgb(c.A, color.R, color.G, color.B));
+                    }
+                }
+            }
+            return bm;
+        }
+
+
         public static Color ColorFromHSV(double hue, double saturation, double value)
         {
             int hi = Convert.ToInt32(Math.Floor(hue / 60)) % 6;
@@ -2744,6 +2768,46 @@ namespace AirScout
             }
             Log.WriteMessage("Finished.");
         }
+
+
+private void InitializeClouds()
+{
+    Log.WriteMessage("Initializing cloud icons.");
+
+    try
+    {
+        il_Clouds_R.Images.Clear();
+
+        for (int i = 0; i <= 100; i++)
+        {
+            il_Clouds_R.Images.Add(
+                CreateCloudIcon(GetColor(1.0f - (float)i / 100.0f)));
+        }
+
+        il_Clouds_R.Images.Add(CreateCloudIcon(Color.Gray));
+        bmindex_gray = il_Clouds_R.Images.Count - 1;
+
+        il_Clouds_R.Images.Add(CreateCloudIcon(Color.LightGreen));
+        bmindex_lightgreen = il_Clouds_R.Images.Count - 1;
+
+        il_Clouds_R.Images.Add(CreateCloudIcon(Color.DarkOrange));
+        bmindex_darkorange = il_Clouds_R.Images.Count - 1;
+
+        il_Clouds_R.Images.Add(CreateCloudIcon(Color.Red));
+        bmindex_red = il_Clouds_R.Images.Count - 1;
+
+        il_Clouds_R.Images.Add(CreateCloudIcon(Color.Magenta));
+        bmindex_magenta = il_Clouds_R.Images.Count - 1;
+
+        Log.WriteMessage("Cloud icons initialized.");
+    }
+    catch (Exception ex)
+    {
+        Log.WriteMessage(ex.ToString(), LogLevel.Error);
+    }
+}
+
+
 
         private void InitializeCharts()
         {
@@ -4781,6 +4845,8 @@ namespace AirScout
                 bm = new Bitmap(il_Planes_M.Images[bmindex]);
             else if (info.Category == PLANECATEGORY.LIGHT)
                 bm = new Bitmap(il_Planes_L.Images[bmindex]);
+            else if (info.Category == PLANECATEGORY.RAINCLOUD)
+                bm = new Bitmap(il_Clouds_R.Images[bmindex]);
             else
                 bm = new Bitmap(il_Planes_M.Images[bmindex]);
             GMarkerGoogle m = new GMarkerGoogle(new PointLatLng(info.Lat, info.Lon), ToolTipFont, RotateImageByAngle(bm, ((info.Track >= 0) && (info.Track <= 360))? (float)info.Track : 0));
@@ -4851,6 +4917,8 @@ namespace AirScout
                 bm = new Bitmap(il_Planes_M.Images[bmindex]);
             else if (info.Category == PLANECATEGORY.LIGHT)
                 bm = new Bitmap(il_Planes_L.Images[bmindex]);
+            else if (info.Category == PLANECATEGORY.RAINCLOUD)
+                bm = new Bitmap(il_Clouds_R.Images[bmindex]);
             else
                 bm = new Bitmap(il_Planes_M.Images[bmindex]);
             GMarkerGoogle m = new GMarkerGoogle(new PointLatLng(info.Lat, info.Lon), ToolTipFont, RotateImageByAngle(bm, ((info.Track >= 0) && (info.Track <= 360)) ? (float)info.Track : 0));
