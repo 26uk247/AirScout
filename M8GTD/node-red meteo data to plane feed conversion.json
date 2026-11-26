@@ -1,0 +1,79 @@
+[
+    {
+        "id": "70c61a630433f657",
+        "type": "tab",
+        "label": "Cloud Feed",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "cb0f0eaf0ce01903",
+        "type": "http in",
+        "z": "70c61a630433f657",
+        "name": "GET Rain AircraftList",
+        "url": "/rain/AircraftList.json",
+        "method": "get",
+        "upload": false,
+        "skipBodyParsing": false,
+        "swaggerDoc": "",
+        "x": 290,
+        "y": 400,
+        "wires": [
+            [
+                "1f45e0ea6b2e190a"
+            ]
+        ]
+    },
+    {
+        "id": "1f45e0ea6b2e190a",
+        "type": "file in",
+        "z": "70c61a630433f657",
+        "name": "Read /tmp/rain_aircraft.json",
+        "filename": "/tmp/rain_aircraft.json",
+        "filenameType": "str",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "allProps": false,
+        "x": 540,
+        "y": 400,
+        "wires": [
+            [
+                "ee18196808caa004"
+            ]
+        ]
+    },
+    {
+        "id": "ee18196808caa004",
+        "type": "function",
+        "z": "70c61a630433f657",
+        "name": "Keep Timestamps Fresh",
+        "func": "// Set your minimum dBZ cutoff here (e.g. 30 = light/moderate rain, 40 = strong 10 GHz scatter cores)\nlet minDbz = flow.get(\"minDbz\") || 30;\n\nlet data = JSON.parse(msg.payload);\nlet nowSec = Math.floor(Date.now() / 1000);\n\n// Filter out any cell whose peak dBZ (extracted from Type, e.g. \"RN42\") is below minDbz\nlet filtered = (data.acList || []).filter(ac => {\n    let dbz = parseInt((ac.Type || \"\").replace(/[^0-9]/g, \"\"), 10) || 0;\n    return dbz >= minDbz;\n});\n\nlet states = filtered.map((ac, idx) => {\n    let hexIcao = (0x4F0001 + idx).toString(16).toUpperCase();\n    return [\n        hexIcao,              // 0 -> Index 1 in AirScout: Hex ICAO (e.g. 400001)\n        ac.Call,              // 1 -> Index 2 in AirScout: Callsign (e.g. RN400001)\n        ac.Lat,               // 2 -> Index 3 in AirScout: Latitude\n        ac.Long,              // 3 -> Index 4 in AirScout: Longitude\n        ac.Alt,               // 4 -> Index 5 in AirScout: Live Bright-Band Altitude (ft)\n        ac.Spd,               // 5 -> Index 6 in AirScout: Speed (kts)\n        ac.Trak,              // 6 -> Index 7 in AirScout: Track (deg)\n        ac.Type,              // 7 -> Index 8 in AirScout: Aircraft Type (i.e. RN42)\n        ac.Reg,               // 8 -> Index 9 in AirScout: Registration (e.g. RN4000014212)\n        nowSec                // 9 -> Index 10 in AirScout: UTC Timestamp (seconds)\n    ];\n});\n\nmsg.payload = states;\nmsg.headers = { \"Content-Type\": \"application/json\" };\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 800,
+        "y": 400,
+        "wires": [
+            [
+                "858c5d1cc1d587f7"
+            ]
+        ]
+    },
+    {
+        "id": "858c5d1cc1d587f7",
+        "type": "http response",
+        "z": "70c61a630433f657",
+        "name": "Send JSON",
+        "statusCode": "200",
+        "headers": {},
+        "x": 1020,
+        "y": 400,
+        "wires": []
+    }
+]
