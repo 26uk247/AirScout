@@ -32,7 +32,9 @@ Some manual entries in the database are required to convert the aircraft type ("
 To build, i download and unpack the zip, then run these commands in a VS basic build tools command window, from the unzipped directory:
 
 nuget restore
+
 msbuild AirScout.sln /p:Configuration=Debug /p:Platform="Any CPU" /clp:ErrorsOnly
+
 corflags /32BITREQ+ E:\Airscout\AirScout-Rain-Clouds\AirScout\bin\Debug\AirScout.exe
 
 My environment is 64 bit windows 10
