@@ -529,6 +529,19 @@ namespace AirScout.Properties {
                 this["Planes_IconFileName"] = value;
             }
         }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("cloud.png")]
+        public string Clouds_IconFileName {
+            get {
+                return ((string)(this["Clouds_IconFileName"]));
+            }
+            set {
+                this["Clouds_IconFileName"] = value;
+            }
+        }
+
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1057,6 +1070,20 @@ namespace AirScout.Properties {
                 this["Planes_IconSize_S"] = value;
             }
         }
+
+      [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("24")]
+        public int Clouds_IconSize_R {
+            get {
+                return ((int)(this["Clouds_IconSize_R"]));
+            }
+            set {
+                this["Clouds_IconSize_R"] = value;
+            }
+        }
+
+
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
